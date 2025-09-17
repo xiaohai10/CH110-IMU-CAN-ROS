@@ -1,0 +1,13 @@
+<launch>
+  <!-- 参数：can 接口名与节点 id -->
+  <arg name="can_interface" default="can0" />
+  <arg name="node_id" default="8" />
+  <arg name="frame_id" default="imu_link" />
+
+  <node pkg="hipnuc_imu_can_bridge" type="imu_can_node" name="imu_can_node" output="screen">
+    <param name="can_interface" value="$(arg can_interface)" />
+    <param name="node_id" value="$(arg node_id)" />
+    <param name="frame_id" value="$(arg frame_id)" />
+  </node>
+</launch>
+
